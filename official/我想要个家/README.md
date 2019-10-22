@@ -59,3 +59,11 @@ date '+%Y-%m-%d %H:%M:%S' > rootfs/Living_Room/Clock; chroot rootfs /IWantAHome-
 # 哎哟，慢了 8 秒钟
 date -d '+8 seconds' '+%Y-%m-%d %H:%M:%S' > rootfs/Living_Room/Clock; chroot rootfs /IWantAHome-linux
 ```
+## 还可以更简单(use busybox
+构造rootfs,copy一个busybox到rootfs
+```
+chroot /rootfs  /busybox sh  #切换rootfs
+export PATH=/        #设置正确环境变量
+
+/busybox sleep 10    #使用busybox sleep
+```
